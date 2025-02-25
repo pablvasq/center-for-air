@@ -1,8 +1,21 @@
+// backend/routes/userRoutes.js
 const express = require('express');
 const router = express.Router();
-const userController = require('../controllers/userController');
+const { 
+  getAllUsers, 
+  getUserById, 
+  createUser, 
+  updateUser, 
+  deleteUser,
+  getTechnicians
+} = require('../controllers/userController');
+const { protect, admin, authorize } = require('../middleware/auth');
 
-// Update the GET route to use the getAllUsers function from the userController
-router.get('/', userController.getAllUsers);
+router.get('/', protect, admin, getAllUsers);
+router.get('/technicians', protect, getTechnicians);
+router.get('/:id', protect, getUserById);
+router.post('/', protect, admin, createUser);
+router.put('/:id', protect, authorize('admin', 'manager'), updateUser);
+router.delete('/:id', protect, admin, deleteUser);
 
 module.exports = router;

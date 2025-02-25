@@ -1,25 +1,49 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-function App() {
+// Components
+import Navbar from './components/layout/Navbar';
+
+// Pages
+import Login from './pages/Auth/Login';
+import Dashboard from './pages/Dashboard/Dashboard';
+
+// Private Route
+import PrivateRoute from './components/routing/PrivateRoute';
+
+// Context
+import { AuthProvider } from './context/auth/AuthContext';
+
+// Set axios defaults
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:5000'; // Update with your backend URL
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <Router>
+        <Navbar />
+        <div className="container">
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route 
+              path="/dashboard" 
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              } 
+            />
+            <Route path="/" element={<Login />} />
+          </Routes>
+        </div>
+        <ToastContainer />
+      </Router>
+    </AuthProvider>
   );
-}
+};
 
 export default App;

@@ -1,4 +1,11 @@
 /* src/pages/Auth/Login.css */
+
+/* Add to Login.css */
+.login-page {
+    min-height: calc(100vh - 70px); /* Adjust 70px to match your navbar height */
+    padding-top: 2rem;
+  }
+  
 .login-page {
     display: flex;
     justify-content: center;

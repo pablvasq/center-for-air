@@ -88,3 +88,53 @@ exports.getMe = async (req, res) => {
     res.status(500).json({ message: 'Server error', error: error.message });
   }
 };
+
+// backend/controllers/authController.js (additions/improvements)
+
+// Add password reset functionality
+exports.forgotPassword = async (req, res) => {
+    try {
+      const { email } = req.body;
+      
+      // Find user
+      const user = await User.findOne({ email });
+      if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+      }
+      
+      // Generate reset token (this would be a random string)
+      const resetToken = crypto.randomBytes(20).toString('hex');
+      
+      // Set token and expiration
+      user.resetPasswordToken = resetToken;
+      user.resetPasswordExpires = Date.now() + 3600000; // 1 hour
+      
+      await user.save();
+      
+      // Send email with reset link
+      // (You'll implement this later)
+      
+      res.json({ message: 'Password reset email sent' });
+    } catch (error) {
+      res.status(500).json({ message: 'Server error', error: error.message });
+    }
+  };
+  
+  // Add role validation
+  exports.validateAdmin = async (req, res) => {
+    try {
+      // Check if user exists and is admin/manager
+      const user = await User.findById(req.user.id);
+      
+      if (!user || !['admin', 'manager'].includes(user.role)) {
+        return res.status(403).json({ isAdmin: false });
+      }
+      
+      res.json({ 
+        isAdmin: true, 
+        role: user.role 
+      });
+    } catch (error) {
+      res.status(500).json({ message: 'Server error', error: error.message });
+    }
+  };

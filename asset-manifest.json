@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/center-for-air/static/css/main.3fff1252.css",
-    "main.js": "/center-for-air/static/js/main.07aaeb4f.js",
-    "static/js/453.b2c890ba.chunk.js": "/center-for-air/static/js/453.b2c890ba.chunk.js",
-    "static/media/technician-bg.jpg": "/center-for-air/static/media/technician-bg.5bee6b80c0253bd4c1e3.jpg",
-    "index.html": "/center-for-air/index.html",
-    "main.3fff1252.css.map": "/center-for-air/static/css/main.3fff1252.css.map",
-    "main.07aaeb4f.js.map": "/center-for-air/static/js/main.07aaeb4f.js.map",
-    "453.b2c890ba.chunk.js.map": "/center-for-air/static/js/453.b2c890ba.chunk.js.map"
+    "main.css": "/static/css/main.20a86016.css",
+    "main.js": "/static/js/main.2463f994.js",
+    "static/js/453.b2c890ba.chunk.js": "/static/js/453.b2c890ba.chunk.js",
+    "static/media/technician-bg.jpg": "/static/media/technician-bg.5bee6b80c0253bd4c1e3.jpg",
+    "index.html": "/index.html",
+    "main.20a86016.css.map": "/static/css/main.20a86016.css.map",
+    "main.2463f994.js.map": "/static/js/main.2463f994.js.map",
+    "453.b2c890ba.chunk.js.map": "/static/js/453.b2c890ba.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fff1252.css",
-    "static/js/main.07aaeb4f.js"
+    "static/css/main.20a86016.css",
+    "static/js/main.2463f994.js"
   ]
 }

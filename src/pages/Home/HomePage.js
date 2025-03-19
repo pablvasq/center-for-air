@@ -1,6 +1,7 @@
 // src/pages/Home/HomePage.js
 import React, { useState } from 'react';
 import './HomePage.css';
+import HeroSection from '../../pages/Home/HeroSection';
 import ServiceSchedulingModal from './ServiceSchedulingModal';
 
 const HomePage = () => {
@@ -12,16 +13,7 @@ const HomePage = () => {
   return (
     <div className="home-page">
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="hero-content">
-          <h1>Breathe Easy with Center for Air</h1>
-          <p>Professional HVAC services to keep your home comfortable all year round</p>
-          <div className="hero-buttons">
-            <button className="btn primary-btn" onClick={openModal}>Schedule Service</button>
-            <button className="btn secondary-btn">Learn More</button>
-          </div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Services Section */}
       <section className="services-section">

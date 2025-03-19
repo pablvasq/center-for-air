@@ -1,11 +1,13 @@
-// src/App.js - with Navbar on all pages
+// src/App.js
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 // Components
-import Navbar from './components/layout/Navbar';
+import TopBar from './components/layout/TopBar';
+import Header from './components/layout/Header';
+import Footer from './components/layout/Footer';
 
 // Pages
 import Login from './pages/Auth/Login';
@@ -29,8 +31,11 @@ const App = () => {
   return (
     <AuthProvider>
       <Router>
-        {/* Navbar rendered outside of Routes so it appears on all pages */}
-        <Navbar />
+        {/* TopBar component (not sticky) */}
+        <TopBar />
+        
+        {/* Header component (sticky) */}
+        <Header />
         
         <div className="app-content">
           <Routes>
@@ -60,6 +65,9 @@ const App = () => {
             />
           </Routes>
         </div>
+        
+        {/* Footer component */}
+        <Footer />
         
         <ToastContainer />
       </Router>

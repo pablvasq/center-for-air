@@ -1,7 +1,6 @@
 /* src/App.css */
 
-
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -16,268 +15,108 @@ body {
 
 .app {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Add this to your App.css or index.css */
 .app-content {
-  padding-top: 0; /* Adjust if needed based on your navbar height */
+  flex: 1 0 auto;
+  padding-top: 108px; /* Space for header (60px) + top bar (48px) */
 }
 
-:root {
-  --primary-color: #007bff;
-  --dark-color: #343a40;
-  --light-color: #f4f4f4;
-  --danger-color: #dc3545;
-  --success-color: #28a745;
+/* Mobile specific styles */
+@media (max-width: 768px) {
+  .app-content {
+    padding-top: 60px; /* Space for just the header */
+  }
+  
+  /* Reset hero section padding since we're adding it at the app level */
+  .hero-section {
+    padding-top: 0 !important;
+  }
+  
+  .book-now-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+@media (max-width: 480px) {
+  .app-content {
+    padding-top: 60px; /* Only account for header height on very small screens */
+  }
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  line-height: 1.6;
-  background-color: #fff;
-  color: #333;
+/* Utility classes for buttons, spacing, etc. */
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 1rem;
 }
 
-a {
-  color: var(--primary-color);
+.btn {
+  display: inline-block;
+  font-weight: 600;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
   text-decoration: none;
 }
 
-a:hover {
-  color: #0056b3;
-}
-
-ul {
-  list-style: none;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-  overflow: hidden;
-  padding: 0 2rem;
-}
-
-/* Navbar */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 2rem;
-  background: var(--primary-color);
-  color: #fff;
-  margin-bottom: 1rem;
-}
-
-.navbar ul {
-  display: flex;
-}
-
-.navbar a {
-  color: #fff;
-  padding: 0.45rem;
-  margin: 0 0.25rem;
-}
-
-.navbar a:hover {
-  color: var(--light-color);
-}
-
-/* Forms */
-.form-group {
-  margin: 1.2rem 0;
-}
-
-.form-group input,
-.form-group textarea,
-.form-group select {
-  display: block;
-  width: 100%;
-  padding: 0.4rem;
-  font-size: 1.2rem;
-  border: 1px solid #ccc;
-}
-
-.form-group input:focus,
-.form-group textarea:focus,
-.form-group select:focus {
-  outline: none;
-  border-color: var(--primary-color);
-}
-
-/* Dashboard */
-.dashboard {
-  padding: 2rem 0;
-}
-
-.dashboard-stats {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
-  margin: 2rem 0;
-}
-
-.stat-card {
-  background: #fff;
-  padding: 1rem;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: bold;
-  color: var(--primary-color);
-}
-
-/* Tables */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1rem 0;
-}
-
-table th,
-table td {
-  padding: 0.5rem;
-  text-align: left;
-  border-bottom: 1px solid #e9ecef;
-}
-
-table th {
-  background-color: #f8f9fa;
-}
-
-/* Login Container */
-.login-container {
-  max-width: 500px;
-  margin: 5rem auto;
-  padding: 2rem;
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-container h1 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.login-container h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-  color: var(--primary-color);
-}
-
-/* Buttons */
-.btn {
-  display: inline-block;
-  background: var(--light-color);
-  color: #333;
-  padding: 0.4rem 1.3rem;
-  border: none;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-right: 0.5rem;
-  outline: none;
-  transition: all 0.2s ease-in;
-}
-
 .btn-primary {
-  background: var(--primary-color);
-  color: #fff;
+  background-color: #d63031;
+  color: white;
+  border: none;
 }
 
 .btn-primary:hover {
-  background: #0069d9;
+  background-color: #b71c1c;
 }
 
-.btn-dark {
-  background: var(--dark-color);
-  color: #fff;
+.btn-secondary {
+  background-color: transparent;
+  color: #005574;
+  border: 1px solid #005574;
 }
 
-.btn-dark:hover {
-  background: #23272b;
+.btn-secondary:hover {
+  background-color: rgba(0, 85, 116, 0.1);
 }
 
-.btn-danger {
-  background: var(--danger-color);
-  color: #fff;
+/* General section styling */
+.section {
+  padding: 4rem 0;
 }
 
-.btn-danger:hover {
-  background: #c82333;
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-.btn-success {
-  background: var(--success-color);
-  color: #fff;
+.section-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 3rem;
 }
 
-.btn-success:hover {
-  background: #218838;
-}
-
-/* Alerts */
-.alert {
-  padding: 0.8rem;
-  margin: 1rem 0;
-  opacity: 0.9;
-  background: var(--light-color);
-  color: #333;
-}
-
-.alert-primary {
-  background: var(--primary-color);
-  color: #fff;
-}
-
-.alert-dark {
-  background: var(--dark-color);
-  color: #fff;
-}
-
-.alert-danger {
-  background: var(--danger-color);
-  color: #fff;
-}
-
-.alert-success {
-  background: var(--success-color);
-  color: #fff;
-}
-
-/* Responsive */
-@media (max-width: 700px) {
-  .hide-sm {
-    display: none;
+/* Responsive text adjustments */
+@media (max-width: 480px) {
+  .section {
+    padding: 3rem 0;
   }
-
-  .navbar {
-    display: block;
-    text-align: center;
+  
+  .section-title {
+    font-size: 1.75rem;
   }
-
-  .navbar ul {
-    justify-content: center;
-  }
-
-  .dashboard-stats {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 500px) {
-  .dashboard-stats {
-    grid-template-columns: 1fr;
+  
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
   }
 }

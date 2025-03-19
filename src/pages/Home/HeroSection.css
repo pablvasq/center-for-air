@@ -1,0 +1,272 @@
+/* src/components/home/HeroSection.css */
+.hero-section {
+    position: relative;
+    height: 600px;
+    background-image: url('/public/images/technician-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    overflow: hidden;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(70deg, rgba(0, 45, 66, 0.9) 50%, rgba(0, 45, 66, 0.6) 100%);
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 4rem 2rem;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .hero-text {
+    max-width: 650px;
+  }
+  
+  .hero-text h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+  }
+  
+  .hero-text p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  
+  .btn {
+    display: inline-block;
+    font-weight: 600;
+    text-align: center;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    font-size: 1rem;
+  }
+  
+  .primary-btn {
+    background-color: #d63031;
+    color: white;
+    border: 2px solid #d63031;
+  }
+  
+  .primary-btn:hover {
+    background-color: #b71c1c;
+    border-color: #b71c1c;
+  }
+  
+  .secondary-btn {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+  
+  .secondary-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Promo card styling */
+  .hero-promo {
+    max-width: 400px;
+    flex-shrink: 0;
+  }
+  
+  .promo-card {
+    background-color: white;
+    border-radius: 8px;
+    border: 3px dashed #d63031;
+    padding: 2rem;
+    text-align: center;
+    color: #333;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .promo-card h2 {
+    color: #333;
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+  }
+  
+  .price {
+    font-family: 'Impact', 'Arial Black', sans-serif;
+    color: #d63031;
+    margin: 1.5rem 0;
+    line-height: 1;
+  }
+  
+  .dollar {
+    font-size: 2.5rem;
+    vertical-align: top;
+    position: relative;
+    top: 0.5rem;
+  }
+  
+  .amount {
+    font-size: 5rem;
+  }
+  
+  .cents {
+    font-size: 2.5rem;
+    vertical-align: top;
+    position: relative;
+    top: 0.5rem;
+  }
+  
+  .promo-subtitle {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .promo-button {
+    display: block;
+    background-color: #034b6b;
+    color: white;
+    padding: 1rem;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .promo-button:hover {
+    background-color: #023852;
+  }
+  
+  .promo-disclaimer {
+    font-size: 0.75rem;
+    color: #666;
+    margin-top: 1rem;
+  }
+  
+  /* Responsive styles */
+  @media screen and (max-width: 1024px) {
+    .hero-section {
+      height: auto;
+      min-height: 500px;
+    }
+    
+    .hero-content {
+      flex-direction: column;
+      padding: 3rem 1.5rem;
+    }
+    
+    .hero-text {
+      max-width: 100%;
+      margin-bottom: 2rem;
+    }
+    
+    .hero-text h1 {
+      font-size: 2.2rem;
+    }
+    
+    .hero-promo {
+      max-width: 100%;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .hero-text h1 {
+      font-size: 1.8rem;
+    }
+    
+    .hero-text p {
+      font-size: 1rem;
+    }
+    
+    .promo-card {
+      padding: 1.5rem;
+    }
+    
+    .amount {
+      font-size: 4rem;
+    }
+    
+    .dollar, .cents {
+      font-size: 2rem;
+    }
+    
+    .hero-section {
+      padding-top: 60px; /* Add space for fixed header */
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .hero-section {
+      min-height: auto;
+      padding-bottom: 2rem;
+    }
+    
+    .hero-content {
+      padding: 2rem 1rem;
+    }
+    
+    .hero-text h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-text p {
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-buttons {
+      flex-direction: column;
+      margin-top: 1.5rem;
+    }
+    
+    .btn {
+      width: 100%;
+    }
+    
+    .hero-promo {
+      margin-top: 2rem;
+    }
+    
+    .promo-card {
+      padding: 1.25rem;
+    }
+    
+    .promo-card h2 {
+      font-size: 1.25rem;
+    }
+    
+    .amount {
+      font-size: 3.5rem;
+    }
+    
+    .dollar, .cents {
+      font-size: 1.75rem;
+    }
+    
+    .promo-button {
+      font-size: 1rem;
+      padding: 0.75rem;
+    }
+  }

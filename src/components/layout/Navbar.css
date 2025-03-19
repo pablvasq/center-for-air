@@ -1,7 +1,8 @@
 /* src/components/layout/Navbar.css */
 .navbar {
-    background-color: #ffffff;
-    height: 70px;
+    /* background-color: #0066A2; */
+    background: linear-gradient(to top, #004A8F, #0072BB);
+    height: 120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -42,7 +43,7 @@
   }
   
   .nav-link {
-    color: #2c3e50;
+    color: #ffffff;
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -53,7 +54,7 @@
   }
   
   .nav-link:hover {
-    color: #3498db;
+    color: #009CDE;
   }
   
   .logout-btn {
@@ -156,3 +157,32 @@
       display: table;
     }
   }
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.navbar-logo-img {
+  height: 100px; /* Adjust this based on your logo size */
+  margin-right: 10px;
+}
+
+.navbar-logo-text {
+  color: #3498db;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+/* You can also choose to hide the text on small screens if needed */
+@media screen and (max-width: 600px) {
+  .navbar-logo-text {
+    display: none;
+  }
+  
+  .navbar-logo-img {
+    height: 90px; /* Slightly smaller for mobile */
+    margin-right: 0;
+  }
+}

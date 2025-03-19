@@ -1,0 +1,79 @@
+/* src/components/layout/TopBar.css */
+.top-bar {
+    background-color: #005574;
+    color: white;
+    width: 100%;
+    /* Remove fixed positioning */
+    position: relative;
+  }
+  
+  .top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+  
+  .call-now {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    background-color: #005574;
+    font-weight: bold;
+  }
+  
+  .call-now .phone-icon {
+    margin-right: 0.5rem;
+  }
+  
+  .call-now a {
+    color: white;
+    text-decoration: none;
+    margin-left: 0.5rem;
+  }
+  
+  .quote-button {
+    background-color: #d63031;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    min-width: 180px;
+  }
+  
+  .quote-link {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    line-height: 1.2;
+  }
+  
+  /* Mobile styles */
+  @media screen and (max-width: 768px) {
+    .call-now {
+      padding: 0.75rem 1rem;
+    }
+    
+    .call-now span {
+      display: none; /* Hide "Call Now" text on smaller screens */
+    }
+    
+    .quote-button {
+      padding: 0.75rem 1rem;
+      min-width: 150px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .top-bar-container {
+      width: 100%;
+    }
+    
+    .call-now {
+      font-size: 0.9rem;
+    }
+    
+    .quote-button {
+      font-size: 0.9rem;
+    }
+  }

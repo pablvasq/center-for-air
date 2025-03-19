@@ -1,8 +1,8 @@
-// src/pages/Auth/Login.js - CSS fix for forgot password link
-
+// src/pages/Auth/Login.js
 import React, { useState, useContext, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { AuthContext } from '../../context/auth/AuthContext';
+import { toast } from 'react-toastify';
 import './Login.css';
 
 const Login = () => {
@@ -150,6 +150,30 @@ const Login = () => {
               </button>
             </div>
           </form>
+          
+          {/* Register Account Section */}
+          <div className="mt-6">
+            <div className="relative">
+              <div className="absolute inset-0 flex items-center">
+                <div className="w-full border-t border-gray-300"></div>
+              </div>
+              <div className="relative flex justify-center text-sm">
+                <span className="px-2 bg-white text-gray-500">
+                  New to Center for Air?
+                </span>
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <Link
+                to="/register"
+                className="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50"
+              >
+                Create an account
+              </Link>
+            </div>
+          </div>
+          {/* End Register Account Section */}
         </div>
       </div>
     </div>

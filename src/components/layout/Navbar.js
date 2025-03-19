@@ -50,7 +50,11 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          Center for Air
+        <img 
+            src="/images/logo.png" 
+            alt="Center for Air Logo" 
+            className="navbar-logo-img" 
+          />
         </Link>
 
         <button className="menu-toggle" onClick={toggleMenu}>

@@ -67,8 +67,9 @@ export const AuthProvider = ({ children }) => {
   };
 
   // Register user
-  const register = async (formData) => {
+ const register = async (formData) => {
     try {
+      // Use the registration endpoint directly in authRoutes
       const res = await axios.post('/api/auth/register', formData);
 
       dispatch({
@@ -84,7 +85,6 @@ export const AuthProvider = ({ children }) => {
       });
     }
   };
-
   // Logout
   const logout = () => {
     dispatch({ type: 'LOGOUT' });
